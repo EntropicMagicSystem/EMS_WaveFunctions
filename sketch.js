@@ -22,12 +22,14 @@ function draw() {
     const scale = scaleSlider.value();
 
     background(0);
+    line(0, height * 0.9, width, height * 0.9);
+
     strokeWeight(5);
     stroke("#1597fe");
     noFill();
 
     push();
-    translate(width / 2, height);
+    translate(width / 2, height * 0.9);
     beginShape();
 
     for (
