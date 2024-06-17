@@ -27,7 +27,7 @@ function draw() {
     noFill();
 
     push();
-    translate(width / 2, height * 0.7);
+    translate(width / 2, height);
     beginShape();
 
     for (
@@ -37,7 +37,7 @@ function draw() {
     ) {
         vertex(
             (x * scale) + time,
-            sin(x) * scale
+            -wave1(x) * scale
         );
     }
 

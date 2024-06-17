@@ -1,3 +1,3 @@
 function wave1(x) {
-    return sin(x);
+    return sin(x) ** 2;
 }
