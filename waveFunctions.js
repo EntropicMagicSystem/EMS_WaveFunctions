@@ -1,3 +1,3 @@
-function wave1(x) {
-    return sin(x) ** 2;
+function wave1(x, time) {
+    return (sin(x) + sin(time)) ** 2;
 }
