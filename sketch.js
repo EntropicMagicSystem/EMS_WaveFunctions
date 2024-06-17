@@ -35,7 +35,7 @@ function draw() {
         x * scale < width / 2;
         x += 0.01
     ) {
-        const y = -gaus_wave(x, time);
+        const y = -WaveFunctions.gaus_wave(x, time);
         vertex(x * scale, y * scale);
     }
 
