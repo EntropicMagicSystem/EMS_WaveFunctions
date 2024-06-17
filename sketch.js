@@ -1,6 +1,9 @@
 function setup() {
-    const canvas = createCanvas(600, 400);
-    canvas.parent("canvas-container");
+    const containerID = "canvas-container";
+    const container = document.querySelector(`#${containerID}`);
+
+    const canvas = createCanvas(container.clientWidth - 20, container.clientHeight - 20);
+    canvas.parent(containerID);
 
     background(0);
 }
