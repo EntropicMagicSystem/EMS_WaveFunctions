@@ -1,4 +1,9 @@
-let scale = 100;
+let scaleSlider;
+
+function setupCanvasParams() {
+    scaleSlider = createSlider(1, 500, 100);
+    scaleSlider.position(20, 20);
+}
 
 function setup() {
     const containerID = "canvas-container";
@@ -7,15 +12,20 @@ function setup() {
     const canvas = createCanvas(container.clientWidth - 20, container.clientHeight - 20);
     canvas.parent(containerID);
 
-    background(0);
+    setupCanvasParams();
 }
 
 function draw() {
-    translate(width / 2, height / 2);
+    const scale = scaleSlider.value();
+
+    background(0);
     strokeWeight(5);
     stroke("#1597fe");
+    noFill();
 
-    beginShape(POINTS);
+    push();
+    translate(width / 2, height * 0.7);
+    beginShape();
 
     let x = -width / 2 / scale;
     while (x * scale < width / 2) {
@@ -24,4 +34,11 @@ function draw() {
     }
 
     endShape();
+    pop();
+
+    strokeWeight(1);
+    textSize(15);
+    stroke(255);
+    textAlign(LEFT, CENTER);
+    text(`Scale: ${scale / 100}x`, 150, 20);
 }
