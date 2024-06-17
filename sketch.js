@@ -1,6 +1,6 @@
 let scaleSlider;
 
-const timeSpeed = 0.1;
+const timeSpeed = 0.05;
 let time = 0;
 
 function setupCanvasParams() {
@@ -35,7 +35,7 @@ function draw() {
         x * scale < width / 2;
         x += 0.01
     ) {
-        const y = -wave1(x, time);
+        const y = -gaus_wave(x, time);
         vertex(x * scale, y * scale);
     }
 
