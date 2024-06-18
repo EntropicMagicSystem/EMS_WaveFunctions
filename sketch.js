@@ -38,7 +38,7 @@ function draw() {
     beginShape();
 
     for (let x = 0; x < PI; x += 0.01) {
-        const y = -WaveFunctions.gaus_wave(x, time, 0);
+        const y = -WaveFunctions.gaus_wave(x, time, 0, 0.5);
         vertex(x / PI * width, y * amplitude);
     }
 
