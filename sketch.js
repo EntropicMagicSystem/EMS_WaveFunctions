@@ -11,7 +11,7 @@ function setupCanvasParams() {
 
     waveFunctionSelect = createSelect();
     waveFunctionSelect.position(22, 50);
-    waveFunctionSelect.option("bell_wave");
+    waveFunctionSelect.option("bell");
     waveFunctionSelect.option("swordfish");
 }
 
