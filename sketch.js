@@ -51,7 +51,7 @@ function draw() {
     beginShape();
 
     for (let x = 0; x < PI; x += 0.01) {
-        const y = -WaveFunctions.gaus_wave(x, time, focusValue, concentrationValue);
+        const y = -WaveFunctions.bell_wave(x, time, focusValue, concentrationValue);
         vertex(x / PI * width, y * amplitude);
     }
 
