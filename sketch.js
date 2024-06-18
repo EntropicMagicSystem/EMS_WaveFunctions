@@ -1,4 +1,5 @@
 let scaleSlider;
+let waveFunctionSelect;
 let focusSlider;
 let concentrationSlider;
 let time = 0;
@@ -9,6 +10,10 @@ const timeSpeed = 0.05;
 function setupCanvasParams() {
     scaleSlider = createSlider(0.3, 2, 0.95, 0.01);
     scaleSlider.position(20, 20);
+
+    waveFunctionSelect = createSelect();
+    waveFunctionSelect.position(22, 50);
+    waveFunctionSelect.option("bell_wave");
 }
 
 function setupWaveParams() {
@@ -32,8 +37,10 @@ function setup() {
 
 function draw() {
     const scaleValue = scaleSlider.value();
+    const selectedWaveFunction = waveFunctionSelect.selected();
     const focusValue = focusSlider.value();
     const concentrationValue = concentrationSlider.value();
+    const wave = WaveFunctions[selectedWaveFunction];
 
     background(0);
     noFill();
@@ -51,7 +58,7 @@ function draw() {
     beginShape();
 
     for (let x = 0; x < PI; x += 0.01) {
-        const y = -WaveFunctions.bell_wave(x, time, focusValue, concentrationValue);
+        const y = -wave(x, time, focusValue, concentrationValue);
         vertex(x / PI * width, y * amplitude);
     }
 
