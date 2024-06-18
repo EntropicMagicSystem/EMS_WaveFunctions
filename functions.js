@@ -12,4 +12,10 @@ class WaveFunctions {
         const noisyConc = concentration + (noise(time + 100_000) * 0.3);
         return Curves.gaussian(x, mean, 1.01 - min(noisyConc, 1));
     }
+
+    static swordfish(x, time, focus, concentration) {
+        const mean = PI / 2 + map(sin(time), -1, 1, -PI / 2, PI / 2) * (1 - focus);
+        const noisyConc = concentration + sin(x);
+        return Curves.gaussian(x, mean, 1.01 - min(noisyConc, 1));
+    }
 }

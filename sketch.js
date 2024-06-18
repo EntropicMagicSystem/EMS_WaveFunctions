@@ -12,13 +12,14 @@ function setupCanvasParams() {
     waveFunctionSelect = createSelect();
     waveFunctionSelect.position(22, 50);
     waveFunctionSelect.option("bell_wave");
+    waveFunctionSelect.option("swordfish");
 }
 
 function setupWaveParams() {
     focusSlider = createSlider(0, 1, 0, 0.01);
     focusSlider.position(width / 2, 20);
 
-    concentrationSlider = createSlider(0, 1, 0.5, 0.01);
+    concentrationSlider = createSlider(0, 1, 0, 0.01);
     concentrationSlider.position(width / 2, 50);
 }
 
