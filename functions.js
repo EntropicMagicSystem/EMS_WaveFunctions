@@ -9,7 +9,7 @@ class Curves {
 class WaveFunctions {
     static gaus_wave(x, time, focus, concentration) {
         const mean = PI / 2 + map(noise(time), 0, 1, -PI / 2, PI / 2) * (1 - focus);
-        const noisyConc = concentration + (noise(time + 10_000) * 0.3);
+        const noisyConc = concentration + (noise(time + 100_000) * 0.3);
         return Curves.gaussian(x, mean, 1.01 - min(noisyConc, 1));
     }
 }
