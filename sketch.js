@@ -2,10 +2,8 @@ let scaleSlider;
 let waveFunctionSelect;
 let focusSlider;
 let concentrationSlider;
-let time = 0;
 
 const amplitude = 300;
-const timeSpeed = 0.05;
 
 function setupCanvasParams() {
     scaleSlider = createSlider(0.3, 2, 0.95, 0.01);
@@ -58,6 +56,7 @@ function draw() {
     beginShape();
 
     for (let x = 0; x < PI; x += 0.01) {
+        const time = Date.now() / 100;
         const y = -wave(x, time, focusValue, concentrationValue);
         vertex(x / PI * width, y * amplitude);
     }
@@ -72,6 +71,4 @@ function draw() {
     text(`Scale: ${scaleValue}x`, 150, 20);
     text(`Focus: ${focusValue}`, width / 2 + 130, 20);
     text(`Concentration: ${concentrationValue}`, width / 2 + 130, 50);
-
-    time += timeSpeed;
 }
